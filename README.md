@@ -9,7 +9,7 @@ Simple method for the visualization of the GPS records using Python and Open Str
 1. Download or clone repository.
 2. Edit the code in `main.py`.
 3. Run the code using `python main.py`.
-4. The resulting image will be save as file.
+4. The resulting image will be saved as file.
 5. Enjoy!
 
 Result:
