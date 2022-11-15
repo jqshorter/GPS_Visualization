@@ -1,9 +1,9 @@
-# GPS-visualization-Python :globe_with_meridians:
+# GPS-visualization-fork
 Simple method for the visualization of the GPS records using Python and Open Street Maps.
 
 ## Requirements
 1. Install Python (3.8 recommended) [Download link](https://www.python.org/downloads/).
-2. Install required packages using pip: `python -m pip install numpy pandas matplotlib pillow`.
+2. Install required packages using pip: `python -m pip install numpy pandas matplotlib pillow io pynmea2 serial`.
 
 ## Usage
 1. Download or clone repository.
