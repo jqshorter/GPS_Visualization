@@ -30,22 +30,17 @@ def coordinate_conversion(lat, long):
 
 
 def data_return():
-    coord_list = []
-    i = 1
-    while i < 40:
+    while 1:
         try:
             line = sio.readline()
             line = line.split(",")
             if line[0] == "$GPRMC":
                 coord = coordinate_conversion(line[3], line[5])
-                coord_list.append(coord)
-
+                return coord
         except serial.SerialException as e:
             print('Device error: {}'.format(e))
             break
         except pynmea2.ParseError as e:
             print('Parse error: {}'.format(e))
             continue
-        i += 1
-    return coord_list
 

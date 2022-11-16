@@ -3,24 +3,24 @@ import matplotlib.pyplot as plt
 import GPS_Extract
 from PIL import Image, ImageDraw
 
-
+gps_data = []
 class GPSVisList(object):
     """
         Class for GPS data visualization using pre-downloaded OSM map in image format.
     """
-    def __init__(self, data_path, map_path, points):
+    def __init__(self, map_path, points):
         """
         :param data_path: Path to file containing GPS records.
         :param map_path: Path to pre-downloaded OSM map in image format.
         :param points: Upper-left, and lower-right GPS points of the map (lat1, lon1, lat2, lon2).
         """
-        self.data_path = data_path
         self.points = points
         self.map_path = map_path
 
         self.result_image = Image
         self.x_ticks = []
         self.y_ticks = []
+        self.coord_list = []
 
     def plot_map(self, output='save', save_as='resultMap.png'):
         """
@@ -52,7 +52,7 @@ class GPSVisList(object):
 
         self.result_image = Image.open(self.map_path, 'r')
         img_points = []
-        gps_data = GPS_Extract.data_return()
+        gps_data.append(GPS_Extract.data_return())
         # gps_data = [tuple([34.0597,-117.821]),tuple([34.0588,-117.822222])]
         for d in gps_data:
             x1, y1 = self.scale_to_img(d, (self.result_image.size[0], self.result_image.size[1]))
